@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: nexusmind
+Version: 1.0.0
+Summary: NexusMind: Production-grade AI Second Brain
+Author-email: Pranav N <pranav@nexusmind.ai>
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown

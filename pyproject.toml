@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexusmind"
+version = "1.0.0"
+description = "NexusMind: Production-grade AI Second Brain — Automated Research Pipeline"
+authors = [{ name = "Pranav N", email = "pranav@nexusmind.ai" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+keywords = ["ai", "llm", "knowledge-base", "rag", "automation", "gemini"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    # File watching & locking
+    "watchdog>=4.0.0",
+    "filelock>=3.14.0",
+    # AI / LLM
+    "google-genai>=0.8.0",
+    # Data validation
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    # Database
+    "sqlalchemy>=2.0.0",
+    "aiosqlite>=0.20.0",
+    # Resilience
+    "tenacity>=9.0.0",
+    # Document processing
+    "pypdf>=5.0.0",
+    # Logging
+    "loguru>=0.7.0",
+    # Environment
+    "python-dotenv>=1.0.0",
+    # HTTP
+    "httpx>=0.27.0",
+    # Dashboard
+    "streamlit>=1.40.0",
+    "plotly>=5.24.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.7.0",
+    "mypy>=1.13.0",
+    "pre-commit>=4.0.0",
+]
+
+[project.scripts]
+nexusmind = "nexusmind.main:cli_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --cov=src/nexusmind --cov-report=term-missing"
+log_cli = true
+log_cli_level = "INFO"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = ["E501", "B008"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["src/nexusmind"]
+omit = ["tests/*", "*/ui.py"]

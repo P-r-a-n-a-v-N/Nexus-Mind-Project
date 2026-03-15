@@ -1,0 +1,2 @@
+[console_scripts]
+nexusmind = nexusmind.main:cli_entry

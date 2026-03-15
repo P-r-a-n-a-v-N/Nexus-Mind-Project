@@ -1,0 +1,46 @@
+# NexusMind — Python dependencies
+# Generated for Python 3.12+
+# Install with: pip install -r requirements.txt
+
+# ── File watching & locking ───────────────────────────────────────────────────
+watchdog>=4.0.0
+filelock>=3.14.0
+
+# ── AI / LLM ─────────────────────────────────────────────────────────────────
+google-genai>=0.8.0
+
+# ── Data validation ───────────────────────────────────────────────────────────
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.0
+aiosqlite>=0.20.0
+
+# ── Resilience ────────────────────────────────────────────────────────────────
+tenacity>=9.0.0
+
+# ── Document processing ───────────────────────────────────────────────────────
+pypdf>=5.0.0
+
+# ── Logging ───────────────────────────────────────────────────────────────────
+loguru>=0.7.0
+
+# ── Environment ───────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
+httpx>=0.27.0
+
+# ── Dashboard ─────────────────────────────────────────────────────────────────
+streamlit>=1.40.0
+plotly>=5.24.0
+pandas>=2.0.0
+
+# ── Dev / Testing (optional) ─────────────────────────────────────────────────
+# Uncomment for development:
+# pytest>=8.3.0
+# pytest-asyncio>=0.24.0
+# pytest-cov>=6.0.0
+# pytest-mock>=3.14.0
+# ruff>=0.7.0
+# mypy>=1.13.0
+# pre-commit>=4.0.0
